@@ -1,0 +1,12 @@
+# Private lenses and projects (personal/sensitive content)
+private/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor files
+*.swp
+*.swo
+*~
+
