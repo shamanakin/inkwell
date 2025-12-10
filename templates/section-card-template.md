@@ -73,6 +73,21 @@
 
 **Last Action**: [Brief note on what was done]
 
+## Rhythm State
+
+*Track rhythm patterns to maintain variance across sections.*
+
+**Recent Patterns Used:**
+- Transitions: [list last 3-5 transition types/patterns used]
+- Em dashes used: [count - should be 0-2 max for entire chapter]
+- Sentence length profile: [short/medium/long distribution in last paragraph]
+- Structural patterns: [triads, mirrored clauses used? Y/N]
+
+**Avoid in Next Section:**
+- Don't repeat: [specific transition patterns to avoid]
+- Watch for: [patterns that appeared 2+ times recently]
+- Vary: [what needs structural variation]
+
 ---
 
 ## Draft

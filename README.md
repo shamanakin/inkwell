@@ -1,10 +1,10 @@
-# InkWell
+# InkWell for Cursor
 
-**English-as-code for long-form writing with LLM agents.**
+**English-as-code for long-form writing with LLM agents in Cursor.**
 
-InkWell is a Markdown-based system that programs LLM agent behavior through natural language. Agents navigate structured `.md` files to maintain coherence, voice, and vision across long-form writing—from blog posts to books.
+InkWell for Cursor is a Markdown-based system that programs LLM agent behavior through natural language. Designed specifically for Cursor's AI coding environment, agents navigate structured `.md` files to maintain coherence, voice, and vision across long-form writing—from blog posts to books.
 
-No scripts. No CLI. Just Markdown files that agents read, follow, and update.
+No scripts. No CLI. Just Markdown files that agents read, follow, and update. Works seamlessly with Cursor's file reading and editing capabilities.
 
 ---
 
@@ -66,6 +66,8 @@ The behavioral core. `AGENT-PLAYBOOK.md` tells agents exactly how to operate:
 
 ## Quick Start
 
+**New to InkWell?** Start with `GETTING-STARTED.md` for a guided walkthrough.
+
 ### 1. Clone or copy this repo
 
 ```bash
@@ -76,11 +78,17 @@ git clone https://github.com/[you]/inkwell.git
 
 ```
 inkwell/
-├── AGENT-PLAYBOOK.md     # How agents should behave
-├── prompts/              # Ready-to-paste session starters
-├── templates/            # Generic templates to customize
-├── lenses/               # Reusable voice/style modules
-└── projects/             # Your writing projects
+├── README.md              # You are here
+├── GETTING-STARTED.md     # First-time user guide
+├── HEALTH-CHECK.md        # System validation protocol
+├── TROUBLESHOOTING.md     # Common issues and solutions
+├── AGENT-PLAYBOOK.md      # How agents should behave
+├── SYSTEM-DESIGN.md       # Architecture and design decisions
+├── prompts/               # Ready-to-paste session starters
+├── templates/             # Generic templates to customize
+├── lenses/                # Reusable voice/style modules
+│   └── INDEX.md          # Catalog of available lenses
+└── projects/              # Your writing projects
 ```
 
 ### 3. Use an existing project or create your own
@@ -89,7 +97,7 @@ inkwell/
 
 1. Open `prompts/writing-session.md`
 2. Copy the example prompt at the bottom
-3. Paste into Cursor (or your LLM interface)
+3. Paste into Cursor chat
 4. The agent will load context and begin work
 
 **To create a new project:**
@@ -108,17 +116,17 @@ inkwell/
 
 ## How Sessions Work
 
-A typical InkWell session:
+A typical InkWell for Cursor session:
 
-1. **You** paste a prompt from `prompts/` into Cursor
-2. **Agent** reads the playbook, project, and section card
+1. **You** paste a prompt from `prompts/` into Cursor chat
+2. **Agent** reads the playbook, project, and section card (using Cursor's file reading)
 3. **Agent** outputs a pre-flight check (you verify it's aligned)
 4. **Agent** does the work (outline, draft, revise)
 5. **Agent** self-checks against the lenses
-6. **Agent** updates the section card and writes a handoff note
+6. **Agent** updates the section card and writes a handoff note (using Cursor's file editing)
 7. **You** review and approve (or request changes)
 
-The key: agents always check back against the lenses and project. They don't drift because they're constantly re-anchoring.
+The key: agents always check back against the lenses and project. They don't drift because they're constantly re-anchoring. Cursor's file system integration makes this seamless—agents can read and write files directly.
 
 ---
 
@@ -153,6 +161,9 @@ Most LLM writing sounds like LLMs. InkWell treats author voice as a core system 
 ```
 inkwell/
 ├── README.md                 # You are here
+├── GETTING-STARTED.md        # First-time user guide
+├── HEALTH-CHECK.md           # System validation protocol
+├── TROUBLESHOOTING.md        # Common issues and solutions
 ├── AGENT-PLAYBOOK.md         # Behavioral instructions for agents
 ├── SYSTEM-DESIGN.md          # Deeper design documentation
 │
@@ -160,20 +171,26 @@ inkwell/
 │   ├── writing-session.md
 │   ├── new-project.md
 │   ├── revision-pass.md
-│   └── recovery.md
+│   ├── recovery.md
+│   └── social-media-session.md
 │
 ├── templates/                # Generic templates
 │   ├── lens-template.md
 │   ├── project-manifest-template.md
 │   ├── section-card-template.md
-│   └── context-manifest-template.md
+│   ├── context-manifest-template.md
+│   └── social-media/         # Social media templates
 │
 ├── lenses/                   # Reusable voice/style/domain lenses
-│   ├── examples/
-│   └── night/                # Example author presets
+│   ├── INDEX.md             # Catalog of available lenses
+│   ├── examples/            # Starter templates
+│   ├── inspired-by/         # Author-inspired lenses
+│   ├── social-media/        # Social media lenses
+│   └── private/             # User-specific (gitignored)
 │
 ├── projects/                 # Writing projects
-│   └── night-practice-blog/  # Example project
+│   ├── cognitive-offloading-primer/  # Example project
+│   └── social-media-template/        # Social media template
 │
 └── meta/
     └── CHANGELOG.md
@@ -212,5 +229,5 @@ MIT. Use it, adapt it, make it yours.
 
 ---
 
-*InkWell is a tool for maintaining coherence across long-form writing with LLM agents. It treats English as code and Markdown as a universal instruction format.*
+*InkWell for Cursor is a tool for maintaining coherence across long-form writing with LLM agents in Cursor. It treats English as code and Markdown as a universal instruction format. Designed to leverage Cursor's file reading and editing capabilities for seamless agent workflows.*
 

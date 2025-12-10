@@ -89,3 +89,7 @@ Ground abstract concepts in concrete, relatable examples. Composites or hypothet
 
 **Combine With**: Style lenses for specific formats (blog, essay, guide)
 
+
+
+
+

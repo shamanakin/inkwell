@@ -85,3 +85,7 @@ Use when it genuinely clarifies. Avoid strained analogies.
 
 **Combine With**: Project-specific domain lenses (frontend, backend, DevOps, etc.)
 
+
+
+
+
