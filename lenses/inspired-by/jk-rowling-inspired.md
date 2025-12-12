@@ -142,3 +142,13 @@ Choose clarity. When in doubt, make it accessible. Note any trade-offs between s
 
 *End of JK Rowling Inspired Lens. Inspired by, not copying.*
 
+
+
+
+
+
+
+
+
+
+

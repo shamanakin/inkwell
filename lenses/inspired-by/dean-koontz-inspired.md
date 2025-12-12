@@ -144,3 +144,13 @@ Choose accessibility with depth. When in doubt, maintain pace while adding meani
 
 *End of Dean Koontz Inspired Lens. Inspired by, not copying.*
 
+
+
+
+
+
+
+
+
+
+

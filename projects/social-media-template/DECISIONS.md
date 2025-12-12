@@ -16,3 +16,13 @@ This file tracks significant decisions made during social media content creation
 
 *End of decisions log. Add entries as significant choices are made.*
 
+
+
+
+
+
+
+
+
+
+

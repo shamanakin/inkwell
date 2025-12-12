@@ -145,3 +145,13 @@ Choose elevated when it serves. When in doubt, add linguistic richness that serv
 
 *End of Shakespeare Inspired Lens. Inspired by, not copying.*
 
+
+
+
+
+
+
+
+
+
+

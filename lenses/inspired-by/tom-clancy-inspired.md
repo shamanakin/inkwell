@@ -145,3 +145,13 @@ Choose technical accuracy. When in doubt, add detail that serves understanding. 
 
 *End of Tom Clancy Inspired Lens. Inspired by, not copying.*
 
+
+
+
+
+
+
+
+
+
+

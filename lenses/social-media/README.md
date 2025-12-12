@@ -25,3 +25,13 @@ The personal voice lens defines your authentic voice. The growth lens adds optim
 
 *These lenses work together to create growth-optimized content in your authentic voice.*
 
+
+
+
+
+
+
+
+
+
+

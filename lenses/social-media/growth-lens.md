@@ -251,3 +251,13 @@ Content determines structure. Don't force content into structure.
 
 *End of Growth Lens. Growth principles for authentic, non-combative X growth.*
 
+
+
+
+
+
+
+
+
+
+

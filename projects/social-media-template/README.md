@@ -40,3 +40,13 @@ To activate Reply Guy mode:
 
 *Use this template to create consistent, authentic, growth-optimized X content.*
 
+
+
+
+
+
+
+
+
+
+

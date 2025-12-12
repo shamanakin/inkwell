@@ -145,3 +145,13 @@ Embrace complexity. When in doubt, add layer rather than simplify. Note what's i
 
 *End of Faulkner Inspired Lens. Inspired by, not copying.*
 
+
+
+
+
+
+
+
+
+
+

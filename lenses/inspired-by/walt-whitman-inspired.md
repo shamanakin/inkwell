@@ -145,3 +145,13 @@ Choose inclusiveness. When in doubt, include rather than exclude. Note trade-off
 
 *End of Walt Whitman Inspired Lens. Inspired by, not copying.*
 
+
+
+
+
+
+
+
+
+
+

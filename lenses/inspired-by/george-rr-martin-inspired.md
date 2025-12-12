@@ -145,3 +145,13 @@ Embrace complexity. When in doubt, add detail that builds world or character. No
 
 *End of George R.R. Martin Inspired Lens. Inspired by, not copying.*
 
+
+
+
+
+
+
+
+
+
+

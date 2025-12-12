@@ -18,15 +18,19 @@ I'm working on a social media content project using InkWell. Load the social med
 
 ---
 
-## For Reply Guy Mode
+## For Reply Guy Mode (Quick Reply - No File Creation)
 
-If you want to generate a reply, use this format:
+If you want to generate a reply, just say:
 
-**Reply Guy Mode Activated**
+**Reply Guy Mode** or **inkwell social media mode**
 
 [Paste post text or describe the post you want to reply to]
 
-Generate 3-5 reply variations following Reply Guy mode workflow. Output reply text only.
+The agent will:
+- Load your personal voice lens and growth lens
+- Generate 3-5 reply variations
+- Output replies directly in chat (conversational, no file creation)
+- No project structure needed unless you explicitly want tracking
 
 ---
 

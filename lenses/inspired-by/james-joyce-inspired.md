@@ -145,3 +145,13 @@ Embrace experimentation. When in doubt, innovate rather than simplify. Note what
 
 *End of James Joyce Inspired Lens. Inspired by, not copying.*
 
+
+
+
+
+
+
+
+
+
+

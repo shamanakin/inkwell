@@ -145,3 +145,13 @@ Choose systematic precision. When in doubt, add structure that serves understand
 
 *End of Sigmund Freud Inspired Lens. Inspired by, not copying.*
 
+
+
+
+
+
+
+
+
+
+

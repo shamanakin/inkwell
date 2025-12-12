@@ -15,3 +15,13 @@ All lenses inherit the rhythm constraints from Night's core lens (em dash limits
 
 *These lenses are for stylistic inspiration. Use them to understand how different voices work, then adapt to your own.*
 
+
+
+
+
+
+
+
+
+
+

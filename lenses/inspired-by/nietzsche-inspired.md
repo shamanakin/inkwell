@@ -145,3 +145,13 @@ Choose provocation. When in doubt, challenge rather than comfort. Note what you'
 
 *End of Nietzsche Inspired Lens. Inspired by, not copying.*
 
+
+
+
+
+
+
+
+
+
+

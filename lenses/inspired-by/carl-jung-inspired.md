@@ -145,3 +145,13 @@ Choose depth and precision. When in doubt, add analysis that serves understandin
 
 *End of Carl Jung Inspired Lens. Inspired by, not copying.*
 
+
+
+
+
+
+
+
+
+
+

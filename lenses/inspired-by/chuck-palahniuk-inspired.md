@@ -145,3 +145,13 @@ Choose directness and edge. When in doubt, cut. Less is more. Note what you're l
 
 *End of Chuck Palahniuk Inspired Lens. Inspired by, not copying.*
 
+
+
+
+
+
+
+
+
+
+

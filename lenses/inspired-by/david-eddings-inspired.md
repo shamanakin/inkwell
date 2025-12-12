@@ -144,3 +144,13 @@ Choose clarity. When in doubt, make it accessible. Note trade-offs between epic 
 
 *End of David Eddings Inspired Lens. Inspired by, not copying.*
 
+
+
+
+
+
+
+
+
+
+

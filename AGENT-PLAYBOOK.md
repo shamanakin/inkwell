@@ -170,17 +170,26 @@ Reply Guy mode activates when user provides:
 - Screenshot/image of a post
 - Pasted post text with context (e.g., "Reply to this:" or "What should I say to this?")
 - Quote tweet context
-- Direct request: "reply mode" or "reply guy mode"
+- Direct request: "reply mode" or "reply guy mode" or "inkwell social media mode"
 
-**Workflow:**
+**IMPORTANT: Reply Guy Mode is conversational by default. Output replies directly in chat. Do NOT create project files or formal structure unless explicitly requested.**
 
-#### 1. INPUT DETECTION
+**Default Workflow (Quick Reply - No File Creation):**
+
+#### 1. LOAD CONTEXT (Minimal)
+- Load personal voice lens (`private/lenses/theroboshaman-x-voice.md`)
+- Load growth lens (`lenses/social-media/growth-lens.md`) for constraints
+- No project file creation needed
+- No section cards needed
+- Just use lenses for voice and constraints
+
+#### 2. INPUT DETECTION
 - Detect screenshot, pasted text, or explicit request
 - Extract post text and context
-- If screenshot: Request user paste post text (most reliable)
+- If screenshot: Extract text from description or request user paste post text
 - Identify if this is reply mode
 
-#### 2. POST ANALYSIS
+#### 3. POST ANALYSIS (Internal)
 - Analyze original post:
   - What is it actually saying?
   - What's the tone? (positive/negative/neutral/question)
@@ -191,7 +200,7 @@ Reply Guy mode activates when user provides:
   - High engagement post worth replying to?
   - Niche alignment?
 
-#### 3. REPLY GENERATION
+#### 4. REPLY GENERATION
 - Generate 3-5 reply variations
 - Each with different angle (content-driven, not forced):
   - Variation 1: Agreement + value extension
@@ -200,14 +209,15 @@ Reply Guy mode activates when user provides:
   - Variation 4: Nuance + perspective
   - Variation 5: Direct answer (if question)
 - Apply all constraints:
-  - No em dashes (HARD CONSTRAINT)
-  - Natural, conversational
+  - No em dashes (HARD CONSTRAINT - 0 per reply)
+  - Natural, conversational (TheRoboShaman voice)
   - Value-first
   - Non-combative
   - Content-driven structure
   - Match original poster's energy level (slightly)
+  - Casual, direct, no fluff
 
-#### 4. SELF-AUDIT
+#### 5. SELF-AUDIT (Internal)
 - Check each variation:
   - Does it add value?
   - Is it natural, not formulaic?
@@ -215,25 +225,33 @@ Reply Guy mode activates when user provides:
   - Right length for positioning? (50-150 chars optimal)
   - Matches original post energy?
   - No em dashes?
+  - Sounds like TheRoboShaman?
 
-#### 5. OUTPUT
-- Present all variations
-- Highlight recommended one with rationale
-- Include positioning notes (timing, length)
-- **Output reply text only** (no conversation, no explanation unless requested)
+#### 6. OUTPUT (Conversational)
+- **Output reply variations directly in chat**
+- No formal structure, no file creation
+- Just present the replies conversationally
+- Format: Simple list of variations, or just the replies
+- No explanation unless user asks
+- Example output format:
+  ```
+  Here are a few reply options:
+  
+  1. [reply text]
+  
+  2. [reply text]
+  
+  3. [reply text]
+  ```
 
-#### 6. TRACKING (Optional)
-- Create reply card if user wants tracking
-- Log original post context
-- Track which variation was used
-- Note engagement (if possible)
-
-**Quick Reply Mode:**
-- When user says "quick reply" or "just reply":
-  1. Extract post text
-  2. Generate 3 reply variations (different angles)
-  3. Output variations only with brief rationale
-  4. No full card creation unless requested
+**Full Tracking Mode (Optional - Only if Explicitly Requested):**
+- If user wants to track replies in project structure:
+  1. Load social media project (`projects/social-media-template/`)
+  2. Create reply card in `replies/` directory
+  3. Log original post context
+  4. Track which variation was used
+  5. Note engagement (if possible)
+- Only do this if user explicitly asks for tracking/project structure
 
 ---
 

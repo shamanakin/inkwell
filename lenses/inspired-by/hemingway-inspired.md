@@ -144,3 +144,13 @@ Choose precision. When in doubt, cut. Less is more. Note what you're leaving for
 
 *End of Hemingway Inspired Lens. Inspired by, not copying.*
 
+
+
+
+
+
+
+
+
+
+

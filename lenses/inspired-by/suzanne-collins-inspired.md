@@ -144,3 +144,13 @@ Choose accessibility and urgency. When in doubt, make it clear and immediate. No
 
 *End of Suzanne Collins Inspired Lens. Inspired by, not copying.*
 
+
+
+
+
+
+
+
+
+
+

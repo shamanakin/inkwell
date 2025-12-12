@@ -139,3 +139,13 @@ Complete outline and begin drafting Chapter 1
 
 
 
+
+
+
+
+
+
+
+
+
+

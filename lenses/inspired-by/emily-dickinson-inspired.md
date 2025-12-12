@@ -145,3 +145,13 @@ Choose precision. When in doubt, compress. Less is more. Note what you're leavin
 
 *End of Emily Dickinson Inspired Lens. Inspired by, not copying. Note: Dickinson's extensive dash use is adapted to modern em dash constraints.*
 
+
+
+
+
+
+
+
+
+
+

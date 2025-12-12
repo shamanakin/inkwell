@@ -145,3 +145,13 @@ Choose elaborate when it serves. When in doubt, add detail that builds world or 
 
 *End of Jack Vance Inspired Lens. Inspired by, not copying.*
 
+
+
+
+
+
+
+
+
+
+

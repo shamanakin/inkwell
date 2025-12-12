@@ -169,3 +169,13 @@ You now understand the basics. Start writing, and the system will make more sens
 
 *Welcome to InkWell for Cursor. Happy writing!*
 
+
+
+
+
+
+
+
+
+
+
