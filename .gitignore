@@ -1,4 +1,4 @@
-# Private lenses and projects (personal/sensitive content)
+# Personal/private content
 private/
 
 # OS files
@@ -9,18 +9,3 @@ Thumbs.db
 *.swp
 *.swo
 *~
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

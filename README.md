@@ -1,14 +1,22 @@
-# InkWell for Cursor
+# InkWell
 
-**English-as-code for long-form writing with LLM agents in Cursor.**
-
-InkWell for Cursor is a Markdown-based system that programs LLM agent behavior through natural language. Designed specifically for Cursor's AI coding environment, agents navigate structured `.md` files to maintain coherence, voice, and vision across long-form writing—from blog posts to books.
-
-No scripts. No CLI. Just Markdown files that agents read, follow, and update. Works seamlessly with Cursor's file reading and editing capabilities.
+**English-as-code for long-form writing with LLM agents.**
 
 ---
 
-## The Core Idea
+## The Premise
+
+Natural language is the native programming language of LLMs.
+
+Most AI tooling wraps models in traditional code—Python scripts, APIs, CLI tools. This adds complexity and creates a translation layer between human intent and model behavior.
+
+InkWell takes a different approach: write instructions in English, structure them in Markdown, and let the LLM execute them directly. The `.md` files *are* the code.
+
+No scripts. No CLI. No dependencies. Just Markdown files that agents read, follow, and update.
+
+---
+
+## What It Does
 
 Writing with LLMs typically fails in one of two ways:
 
@@ -25,9 +33,55 @@ The result: agents stay aligned across sessions, producing coherent work that so
 
 ---
 
+## Philosophy
+
+### English as Code
+
+The core insight: LLMs don't need Python to be programmed. They need clear instructions in their native format—natural language. InkWell leans into this:
+
+- The "source code" is human-readable prose
+- Debugging means reading and revising English
+- Portability: works anywhere you can paste text into an LLM
+
+### Files Are Memory
+
+LLMs don't have persistent memory across sessions. InkWell uses a simpler solution than RAG or fine-tuning: **structured files that agents read and write**.
+
+Before acting, agents read the relevant files. After acting, they update them. The file system *is* the memory. This means:
+
+- Transparent: you can see exactly what the agent "knows"
+- Editable: you can directly modify the memory
+- Debuggable: problems are visible in the files
+- Portable: just copy the folder
+
+### Voice as Architecture
+
+Most LLM writing sounds like LLMs. This isn't a prompting failure—it's a systems failure. Voice isn't something you add at the end; it's something that must be encoded in the system itself.
+
+InkWell treats voice (lenses) as first-class objects:
+- Defined explicitly in dedicated files
+- Consulted before and after writing
+- Used for self-checking and revision
+- Composable and reusable across projects
+
+### Recursive Self-Reference
+
+The system's power comes from loops:
+
+```
+load context → act → self-check → update state → repeat
+```
+
+Each step involves reading structured files. The "self-check" step explicitly requires agents to re-read the lens and compare their output. The "update state" step creates artifacts that future sessions can read.
+
+This creates continuity without magic. The agent doesn't "remember"—it reads its own notes.
+
+---
+
 ## Core Concepts
 
 ### Lenses
+
 Reusable definitions of *how to think and write*. A lens might encode:
 - An author's voice and values
 - A writing style (clinical, essayistic, educational)
@@ -37,6 +91,7 @@ Reusable definitions of *how to think and write*. A lens might encode:
 Lenses are composable. Stack them for your project (e.g., "my voice + clinical domain + blog format").
 
 ### Projects
+
 The *what*—a specific writing endeavor. Each project has:
 - `PROJECT.md`: Vision, audience, constraints, active lenses
 - `OUTLINE.md`: Structure and hierarchy
@@ -46,6 +101,7 @@ The *what*—a specific writing endeavor. Each project has:
 - `sections/`: Individual section cards
 
 ### Section Cards
+
 Local context for each piece of content. A card tracks:
 - Intent (what this section must achieve)
 - Status (not started → drafting → revising → complete)
@@ -54,6 +110,7 @@ Local context for each piece of content. A card tracks:
 - The draft itself
 
 ### The Agent Playbook
+
 The behavioral core. `AGENT-PLAYBOOK.md` tells agents exactly how to operate:
 1. Load context (project, lenses, section card)
 2. Output a pre-flight check (confirm understanding)
@@ -64,51 +121,58 @@ The behavioral core. `AGENT-PLAYBOOK.md` tells agents exactly how to operate:
 
 ---
 
-## Quick Start
+## Structure
 
-**New to InkWell?** Start with `GETTING-STARTED.md` for a guided walkthrough.
+```
+inkwell/
+├── AGENT-PLAYBOOK.md         # How agents should behave
+├── SYSTEM-DESIGN.md          # Deeper design documentation
+├── prompts/                  # Ready-to-paste session starters
+│   ├── writing-session.md
+│   ├── new-project.md
+│   ├── revision-pass.md
+│   └── recovery.md
+├── templates/                # Generic templates
+│   ├── lens-template.md
+│   ├── project-manifest-template.md
+│   ├── section-card-template.md
+│   └── context-manifest-template.md
+├── lenses/                   # Reusable voice/style/domain lenses
+│   └── examples/
+└── projects/                 # Writing projects
+    └── example-blog/
+```
+
+---
+
+## Quick Start
 
 ### 1. Clone or copy this repo
 
 ```bash
-git clone https://github.com/[you]/inkwell.git
+git clone https://github.com/shamanakin/inkwell.git
 ```
 
 ### 2. Explore the structure
 
-```
-inkwell/
-├── README.md              # You are here
-├── GETTING-STARTED.md     # First-time user guide
-├── HEALTH-CHECK.md        # System validation protocol
-├── TROUBLESHOOTING.md     # Common issues and solutions
-├── AGENT-PLAYBOOK.md      # How agents should behave
-├── SYSTEM-DESIGN.md       # Architecture and design decisions
-├── prompts/               # Ready-to-paste session starters
-├── templates/             # Generic templates to customize
-├── lenses/                # Reusable voice/style modules
-│   └── INDEX.md          # Catalog of available lenses
-└── projects/              # Your writing projects
-```
+Open any of the example files to see how projects, lenses, and section cards work together.
 
 ### 3. Use an existing project or create your own
 
 **To use the example project:**
-
 1. Open `prompts/writing-session.md`
 2. Copy the example prompt at the bottom
-3. Paste into Cursor chat
+3. Paste into Cursor (or your LLM interface)
 4. The agent will load context and begin work
 
 **To create a new project:**
-
 1. Open `prompts/new-project.md`
 2. Follow the instructions to scaffold a new project
 3. The agent will ask questions and create the structure
 
 ### 4. Customize lenses for your voice
 
-1. Copy `templates/lens-template.md` to `lenses/your-name/`
+1. Copy `templates/lens-template.md` to `lenses/`
 2. Fill in the sections that matter (you don't need all of them)
 3. Reference your lens in your project's `PROJECT.md`
 
@@ -116,85 +180,17 @@ inkwell/
 
 ## How Sessions Work
 
-A typical InkWell for Cursor session:
+A typical InkWell session:
 
-1. **You** paste a prompt from `prompts/` into Cursor chat
-2. **Agent** reads the playbook, project, and section card (using Cursor's file reading)
+1. **You** paste a prompt from `prompts/` into Cursor
+2. **Agent** reads the playbook, project, and section card
 3. **Agent** outputs a pre-flight check (you verify it's aligned)
 4. **Agent** does the work (outline, draft, revise)
 5. **Agent** self-checks against the lenses
-6. **Agent** updates the section card and writes a handoff note (using Cursor's file editing)
+6. **Agent** updates the section card and writes a handoff note
 7. **You** review and approve (or request changes)
 
-The key: agents always check back against the lenses and project. They don't drift because they're constantly re-anchoring. Cursor's file system integration makes this seamless—agents can read and write files directly.
-
----
-
-## Philosophy
-
-### English as Code
-
-Natural language *is* the programming language for LLMs. InkWell leans into this: instead of writing Python to control agent behavior, you write Markdown that agents read and follow.
-
-This means:
-- No dependencies, no installation, no build step
-- The "code" is human-readable and editable
-- Works anywhere Markdown works
-
-### Structured Recursion
-
-The system's power comes from recursive self-reference:
-- Before acting, agents read the relevant files
-- After acting, they update those files
-- Future sessions pick up where previous ones left off
-
-This creates continuity without requiring persistent memory.
-
-### Voice as First-Class Citizen
-
-Most LLM writing sounds like LLMs. InkWell treats author voice as a core system feature, not an afterthought. The lens system exists specifically to make output sound like *you*, not like a helpful assistant.
-
----
-
-## Repository Structure
-
-```
-inkwell/
-├── README.md                 # You are here
-├── GETTING-STARTED.md        # First-time user guide
-├── HEALTH-CHECK.md           # System validation protocol
-├── TROUBLESHOOTING.md        # Common issues and solutions
-├── AGENT-PLAYBOOK.md         # Behavioral instructions for agents
-├── SYSTEM-DESIGN.md          # Deeper design documentation
-│
-├── prompts/                  # Ready-to-paste session prompts
-│   ├── writing-session.md
-│   ├── new-project.md
-│   ├── revision-pass.md
-│   ├── recovery.md
-│   └── social-media-session.md
-│
-├── templates/                # Generic templates
-│   ├── lens-template.md
-│   ├── project-manifest-template.md
-│   ├── section-card-template.md
-│   ├── context-manifest-template.md
-│   └── social-media/         # Social media templates
-│
-├── lenses/                   # Reusable voice/style/domain lenses
-│   ├── INDEX.md             # Catalog of available lenses
-│   ├── examples/            # Starter templates
-│   ├── inspired-by/         # Author-inspired lenses
-│   ├── social-media/        # Social media lenses
-│   └── private/             # User-specific (gitignored)
-│
-├── projects/                 # Writing projects
-│   ├── cognitive-offloading-primer/  # Example project
-│   └── social-media-template/        # Social media template
-│
-└── meta/
-    └── CHANGELOG.md
-```
+The key: agents always check back against the lenses and project. They don't drift because they're constantly re-anchoring.
 
 ---
 
@@ -214,12 +210,13 @@ inkwell/
 
 ---
 
-## Contributing
+## Origins
 
-This is an early-stage project. If you use it and find improvements:
-- Open an issue for bugs or suggestions
-- PRs welcome for templates, documentation, or system refinements
-- Share your lenses if they might help others
+InkWell was built on the principle that LLMs are fundamentally language machines, not code machines. Instead of wrapping them in traditional programming constructs, InkWell meets them where they are: structured natural language.
+
+It's part of the BEOS (BrightEyed Operating System) ecosystem of AI-assisted productivity tools, alongside:
+- **InfoHunter**: Research and discovery
+- **Lens Atlas**: Modular cognitive engines
 
 ---
 
@@ -229,5 +226,4 @@ MIT. Use it, adapt it, make it yours.
 
 ---
 
-*InkWell for Cursor is a tool for maintaining coherence across long-form writing with LLM agents in Cursor. It treats English as code and Markdown as a universal instruction format. Designed to leverage Cursor's file reading and editing capabilities for seamless agent workflows.*
-
+*InkWell treats English as code and Markdown as a universal instruction format. The result: coherent, voice-aligned long-form writing across sessions.*

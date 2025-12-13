@@ -1,8 +1,6 @@
-# InkWell for Cursor System Design
+# InkWell System Design
 
-> This document explains the design decisions, principles, and architecture behind InkWell for Cursor. Read this if you want to understand *why* the system works the way it does, or if you're thinking about extending it.
-
-**Note**: InkWell for Cursor is designed specifically for Cursor's AI coding environment, leveraging its file reading and editing capabilities for seamless agent workflows.
+> This document explains the design decisions, principles, and architecture behind InkWell. Read this if you want to understand *why* the system works the way it does, or if you're thinking about extending it.
 
 ---
 
@@ -21,7 +19,6 @@ InkWell takes a different approach: write instructions in English, structure the
 - The "source code" is human-readable and editable
 - Debugging means reading and revising prose
 - Portability: works anywhere you can paste text into an LLM
-- **Cursor Integration**: Designed to leverage Cursor's file reading and editing capabilities for seamless agent workflows
 
 ### 2. External Memory Over Internal Memory
 
