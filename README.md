@@ -121,12 +121,44 @@ The behavioral core. `AGENT-PLAYBOOK.md` tells agents exactly how to operate:
 
 ---
 
+## Intent Router
+
+Not all writing is the same. InkWell now includes an **Intent Router** that configures the system based on what you're writing for:
+
+| Intent | What It's For | Lens | Output |
+|--------|---------------|------|--------|
+| **HARVEST** | Brain dumps, voice notes | None (freeform) | `Database/raw-seeds/` |
+| **POSTERITY** | Brainstorming, journaling | Core (optional) | `WRITING/personal/` |
+| **THINKPIECE** | Personal essays | Essayist | `WRITING/thinkpieces/` |
+| **PUBLISH** | Blog posts, articles | Publishing | `WRITING/publish/` |
+
+The Intent Router determines which lens to load and where to save output. See `INTENT-ROUTER.md` for full details.
+
+---
+
+## PUBLISH Circuit
+
+When intent is PUBLISH and the piece is complete, the **PUBLISH circuit** converts your Markdown to a properly formatted `.docx` file:
+
+1. Runs a formatting check
+2. Converts via Pandoc (headings, bold, italics preserved)
+3. Outputs a file ready for platform upload
+
+**Prerequisite**: Install [Pandoc](https://pandoc.org/installing.html) (one-time setup).
+
+See `circuits/PUBLISH.md` for the full workflow.
+
+---
+
 ## Structure
 
 ```
 inkwell/
 ├── AGENT-PLAYBOOK.md         # How agents should behave
+├── INTENT-ROUTER.md          # Writing intent routing logic
 ├── SYSTEM-DESIGN.md          # Deeper design documentation
+├── circuits/                 # Operational circuits
+│   └── PUBLISH.md            # Markdown → .docx conversion
 ├── prompts/                  # Ready-to-paste session starters
 │   ├── writing-session.md
 │   ├── new-project.md
@@ -138,6 +170,7 @@ inkwell/
 │   ├── section-card-template.md
 │   └── context-manifest-template.md
 ├── lenses/                   # Reusable voice/style/domain lenses
+│   ├── publishing-lens.md    # For public-facing content
 │   └── examples/
 └── projects/                 # Writing projects
     └── example-blog/
